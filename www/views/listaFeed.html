@@ -1,0 +1,25 @@
+<ion-view style="background-color: #f8f8f8;" ng-init="init()">
+    <ion-content>
+        <div class="bar bar-header bar-calm ajuste-altura">
+            <span class="titulo">Feed</span>
+        </div>
+        <div class="conteudo">
+            <!-- Cabeçalho do conteúdo -->
+            <div class="header-conteudo">
+                <span class="titulo-header-conteudo">Listagem</span>
+                <button ng-click="showPopup()" class="button button-stable posicao-botao">
+                    Adicionar feed
+                </button>
+            </div>
+            <!-- listagem -->
+            <div class="listagem" ng-repeat="item in feed track by $index">
+                <div class="listagem-item">
+                    <span class="feed">{{item.nome}}</span>
+                    <span class="feed-acao">
+                        <i class="icon ion-chevron-right"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
