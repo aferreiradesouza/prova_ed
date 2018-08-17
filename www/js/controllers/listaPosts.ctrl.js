@@ -1,13 +1,13 @@
 app.controller('listaPostsCtrl', function ($scope, Util, $rootScope, servicoFeed, $location) {
-    $rootScope.feed = [];
+    $rootScope.feeds = [];
     $rootScope.posts = [];
 
     $scope.init = function () {
-        var feedAux = Util.obterObjeto('Feed');
+        var feedsAux = Util.obterObjeto('Feeds');
         var postsAux = Util.obterObjeto('Posts');
 
-        if (feedAux != '') {
-            $rootScope.feed = Util.converterParaObjeto(feedAux);
+        if (feedsAux != '') {
+            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
         }
         if (postsAux != '') {
             $rootScope.posts = Util.converterParaObjeto(postsAux);

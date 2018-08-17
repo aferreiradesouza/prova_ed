@@ -1,14 +1,14 @@
 app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed, $location) {
     $scope.data = {}
-    $rootScope.feed = [];
+    $rootScope.feeds = [];
     $rootScope.posts = [];
 
     $scope.init = function () {
-        var feedAux = Util.obterObjeto('Feed');
+        var feedsAux = Util.obterObjeto('Feeds');
         var postsAux = Util.obterObjeto('Posts');
 
-        if (feedAux != '') {
-            $rootScope.feed = Util.converterParaObjeto(feedAux);
+        if (feedsAux != '') {
+            $rootScope.feed = Util.converterParaObjeto(feedsAux);
         }
         if (postsAux != '') {
             $rootScope.posts = Util.converterParaObjeto(postsAux);
@@ -16,11 +16,12 @@ app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed,
     }
 
     $scope.excluir = function(index){
-        $rootScope.feed.splice(index, 1);
-        Util.salvarObjeto('Feed', $rootScope.feed)
+        $rootScope.feeds.splice(index, 1);
+        Util.salvarObjeto('Feeds', $rootScope.feeds)
     }
 
-    $scope.obterListaPosts = function(guid){
+    $scope.obterListaPosts = function(guid, name){
+        $rootScope.feedAtual = name;
         $rootScope.guidAtual = guid;
         $rootScope.listaPosts = servicoFeed.obterListaPost(guid);
 

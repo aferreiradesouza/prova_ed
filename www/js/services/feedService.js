@@ -10,18 +10,18 @@ app.service('servicoFeed', function(Util, $rootScope) {
     function validarFeed(feed){
         var resposta = {};
 
-        $rootScope.feed = [];
-        var feedAux = Util.obterObjeto('Feed');
-        if (feedAux != '') {
-            $rootScope.feed = Util.converterParaObjeto(feedAux);
+        $rootScope.feeds = [];
+        var feedsAux = Util.obterObjeto('Feeds');
+        if (feedsAux != '') {
+            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
         }
         resposta.resultado = true;
 
-        $rootScope.feed.forEach(item => {
-            if(feed.nome == item.nome || feed.url == item.url){
+        $rootScope.feeds.forEach(item => {
+            if(feed.name == item.name || feed.url == item.url){
                 resposta.resultado = false;
 
-                if(feed.nome == item.nome){
+                if(feed.name == item.name){
                     resposta.errorNome = 'Nome já existente.';
                 }
                 if(feed.url == item.url){
@@ -34,13 +34,13 @@ app.service('servicoFeed', function(Util, $rootScope) {
     }
 
     function registrarFeed(feed) {
-        $rootScope.feed = [];
-        var feedAux = Util.obterObjeto('Feed');
-        if (feedAux != '') {
-            $rootScope.feed = Util.converterParaObjeto(feedAux);
+        $rootScope.feeds = [];
+        var feedsAux = Util.obterObjeto('Feeds');
+        if (feedsAux != '') {
+            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
         }
-        $rootScope.feed.push(feed);
-        Util.salvarObjeto('Feed', $rootScope.feed);
+        $rootScope.feeds.push(feed);
+        Util.salvarObjeto('Feeds', $rootScope.feeds);
     }
 
     function criarPost(post){
@@ -81,8 +81,8 @@ app.service('servicoFeed', function(Util, $rootScope) {
         }
 
         $rootScope.posts.forEach(element => {
-            if(element.titulo == obj.titulo && element.guid == obj.guid){
-                element.postLido = !element.postLido;
+            if(element.title == obj.title && element.guid == obj.guid){
+                element.read = !element.read;
                 Util.salvarObjeto('Posts', $rootScope.posts);
             }
         });

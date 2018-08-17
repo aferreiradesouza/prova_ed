@@ -6,7 +6,7 @@
         <div class="conteudo">
             <!-- Cabeçalho do conteúdo -->
             <div class="header-conteudo">
-                <span class="titulo-header-conteudo">{{postagem.titulo}}</span>
+                <span class="titulo-header-conteudo">{{postagem.title}}</span>
                 <a ng-href="/#/listaPosts">
                     <button class="button button-stable posicao-botao">
                         Voltar
@@ -18,13 +18,13 @@
             <div class="marcarLido">
                 <span class="lido">Marcar como lido?</span>
                 <label class="toggle ajustesToggle">
-                    <input type="checkbox" ng-model="postagem.postLido" ng-click="alterarLido(postagem)">
+                    <input type="checkbox" ng-model="postagem.read" ng-click="alterarLido(postagem)">
                     <div class="track">
                         <div class="handle"></div>
                     </div>
                 </label>
             </div>
-            <div class="urlPost">{{postagem.urlPost}}</div>
+            <div class="urlPost">{{postagem.url}}</div>
             <div class="textPost">{{postagem.text}}</div>
         </div>
     </ion-content>

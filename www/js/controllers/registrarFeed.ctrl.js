@@ -1,12 +1,12 @@
 app.controller('registrarFeedCtrl', function ($scope, Util, servicoFeed, $rootScope, $location) {
     $scope.data = {}
-    $rootScope.feed = [];
+    $rootScope.feeds = [];
 
     $scope.init = function () {
-        var feedAux = Util.obterObjeto('Feed');
+        var feedsAux = Util.obterObjeto('Feeds');
 
-        if (feedAux != '') {
-            $rootScope.feed = Util.converterParaObjeto(feedAux);
+        if (feedsAux != '') {
+            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
         }
     }
 

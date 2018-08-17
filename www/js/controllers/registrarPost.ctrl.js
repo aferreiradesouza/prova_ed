@@ -11,7 +11,7 @@ app.controller('registrarPostCtrl', function ($scope, Util, $rootScope, servicoF
     }
 
     $scope.criar = function(){
-        $scope.data.postLido = false;
+        $scope.data.read = false;
         $scope.data.guid = $rootScope.guidAtual;
         servicoFeed.criarPost($scope.data);
         $location.path("/listaPosts");

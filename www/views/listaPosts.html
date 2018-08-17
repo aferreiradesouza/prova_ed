@@ -11,7 +11,7 @@
                         Voltar
                     </button>
                 </a>
-                <span class="titulo-header-conteudo" style="margin-left: 10px;">Posts</span>
+                <span class="titulo-header-conteudo" style="margin-left: 10px;">{{feedAtual}}</span>
                 <a ng-href="/#/registrarPost">
                     <button class="button button-stable posicao-botao">
                         Adicionar Post
@@ -19,9 +19,12 @@
                 </a>
             </div>
             <!-- listagem -->
+            <div ng-if="listaPosts == '' || listaPosts == null" class="msgAtencao">
+                Nenhum post criado
+            </div>
             <ul class="list" style="margin-top: 15px;">
                 <li class="item" ng-class="{'lido' : item.lido == false}" ng-repeat="item in listaPosts" style="font-size: 20px;" ng-click="verPost(item)">
-                    {{item.titulo}}&nbsp;<img src="../img/check.png" ng-if="item.postLido">
+                    {{item.title}}&nbsp;<img src="../img/check.png" ng-if="item.read">
                     <span class="feed-acao">
                         <i class="icon ion-chevron-right"></i>
                     </span>
