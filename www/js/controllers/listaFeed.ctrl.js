@@ -3,6 +3,8 @@ app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed,
     $rootScope.feeds = [];
     $rootScope.posts = [];
 
+
+    //Obtem listas
     $scope.init = function () {
         var feedsAux = Util.obterObjeto('Feeds');
         var postsAux = Util.obterObjeto('Posts');
@@ -15,11 +17,13 @@ app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed,
         }
     }
 
+    //exclui o feed
     $scope.excluir = function(index){
         $rootScope.feeds.splice(index, 1);
         Util.salvarObjeto('Feeds', $rootScope.feeds)
     }
 
+    //salva o guid e o name do feed selecionado, laem de chamar o servico de obterlistaPost
     $scope.obterListaPosts = function(guid, name){
         $rootScope.feedAtual = name;
         $rootScope.guidAtual = guid;

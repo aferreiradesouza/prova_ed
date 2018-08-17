@@ -2,6 +2,7 @@ app.controller('listaPostsCtrl', function ($scope, Util, $rootScope, servicoFeed
     $rootScope.feeds = [];
     $rootScope.posts = [];
 
+    //Obtem listas
     $scope.init = function () {
         var feedsAux = Util.obterObjeto('Feeds');
         var postsAux = Util.obterObjeto('Posts');
@@ -16,6 +17,7 @@ app.controller('listaPostsCtrl', function ($scope, Util, $rootScope, servicoFeed
         $rootScope.listaPosts = servicoFeed.obterListaPost($rootScope.guidAtual);
     }
 
+    //guarda o objeto do post selecionado no $rootScope.postagem
     $scope.verPost = function(obj){
         $rootScope.postagem = obj;
         $location.path('/visualizarPost');

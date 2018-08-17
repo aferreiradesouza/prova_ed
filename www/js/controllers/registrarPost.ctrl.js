@@ -2,6 +2,7 @@ app.controller('registrarPostCtrl', function ($scope, Util, $rootScope, servicoF
     $scope.data = {}
     $rootScope.posts = [];
 
+    //Obtem listas
     $scope.init = function () {
         var postsAux = Util.obterObjeto('Posts');
 
@@ -10,6 +11,7 @@ app.controller('registrarPostCtrl', function ($scope, Util, $rootScope, servicoF
         }
     }
 
+    //registra o post alimentando o guid dele com o guid do $rootScope.guidAtual
     $scope.criar = function(){
         $scope.data.read = false;
         $scope.data.guid = $rootScope.guidAtual;
