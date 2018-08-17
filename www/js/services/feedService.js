@@ -3,7 +3,8 @@ app.service('servicoFeed', function(Util, $rootScope) {
         registrarFeed : registrarFeed,
         validarFeed : validarFeed,
         obterListaPost : obterListaPost,
-        criarPost : criarPost
+        criarPost : criarPost,
+        marcarLido : marcarLido
     }
 
     function validarFeed(feed){
@@ -70,6 +71,23 @@ app.service('servicoFeed', function(Util, $rootScope) {
         });
 
         return listaPosts;
+    }
+
+    function marcarLido(obj){
+        $rootScope.posts = [];
+        var postsAux = Util.obterObjeto('Posts');
+        if (postsAux != '') {
+            $rootScope.posts = Util.converterParaObjeto(postsAux);
+        }
+
+        $rootScope.posts.forEach(element => {
+            if(element.titulo == obj.titulo && element.guid == obj.guid){
+                element.postLido = !element.postLido;
+                Util.salvarObjeto('Posts', $rootScope.posts);
+            }
+        });
+
+        return;
     }
 
 })

@@ -2,14 +2,3 @@
     line-height: 30px;
     min-height: 100px !important;
 }
-
-.ajustesToggle {
-    margin-top: 10px;
-}
-
-.lido {
-    position: absolute;
-    right: 60px;
-    bottom: 10px;
-    font-size: 20px;
-}

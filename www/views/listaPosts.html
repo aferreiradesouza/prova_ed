@@ -21,7 +21,7 @@
             <!-- listagem -->
             <ul class="list" style="margin-top: 15px;">
                 <li class="item" ng-class="{'lido' : item.lido == false}" ng-repeat="item in listaPosts" style="font-size: 20px;" ng-click="verPost(item)">
-                    {{item.titulo}}
+                    {{item.titulo}}&nbsp;<img src="../img/check.png" ng-if="item.postLido">
                     <span class="feed-acao">
                         <i class="icon ion-chevron-right"></i>
                     </span>

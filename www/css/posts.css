@@ -6,3 +6,40 @@
 .ler{
     font-weight: bold;
 }
+
+.urlPost{
+    font-size: 15px;
+    opacity: 0.6;
+    margin-top: -23px;
+}
+
+.textPost{
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+.marcarLido{
+    position: absolute;
+    width: 231px;
+    height: 35px;
+    right: 30px;
+}
+
+.ajustesToggle {
+    position: absolute;
+    right: 0;
+}
+
+.lido {
+    position: absolute;
+    right: 60px;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+.item>img{
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}

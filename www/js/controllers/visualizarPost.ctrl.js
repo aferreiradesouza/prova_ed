@@ -8,4 +8,8 @@ app.controller('visualizarPostCtrl', function ($scope, Util, $rootScope, servico
             $rootScope.posts = Util.converterParaObjeto(postsAux);
         }
     }
+
+    $scope.alterarLido = function(obj){
+        servicoFeed.marcarLido(obj);
+    }
 })

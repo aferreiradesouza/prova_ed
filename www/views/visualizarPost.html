@@ -15,8 +15,17 @@
             </div>
 
             <!-- Conteudo -->
-            <div>{{postagem.urlPost}}</div>
-            <div>{{postagem.text}}</div>
+            <div class="marcarLido">
+                <span class="lido">Marcar como lido?</span>
+                <label class="toggle ajustesToggle">
+                    <input type="checkbox" ng-model="postagem.postLido" ng-click="alterarLido(postagem)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="urlPost">{{postagem.urlPost}}</div>
+            <div class="textPost">{{postagem.text}}</div>
         </div>
     </ion-content>
 </ion-view>
