@@ -1,0 +1,35 @@
+<ion-view style="background-color: #f8f8f8;" ng-init="init()">
+    <ion-content scroll="false">
+        <div class="bar bar-header bar-calm ajuste-altura">
+            <span class="titulo">Feed</span>
+        </div>
+        <div class="conteudo">
+            <!-- Cabeçalho do conteúdo -->
+            <div class="header-conteudo">
+                <span class="titulo-header-conteudo">Registrar feed</span>
+                <a ng-href="/#/listaFeed"><button class="button button-stable posicao-botao">
+                        Voltar
+                    </button></a>
+            </div>
+            <!-- formulário -->
+            <form ng-submit="registrar()" name="registro">
+                <div class="list list-inset limitador">
+                    <label class="item item-input">
+                        <input type="text" ng-model="data.nome" style="font-size: 20px;" placeholder="Nome" name="nome" required>
+                    </label>
+                    <label class="item item-input" style="font-size: 25px;">
+                        <input type="text" ng-model="data.url" style="font-size: 20px;" placeholder="URL" name="url" required>
+                    </label>
+                </div>
+                <button class="button button-calm posicao-botao-registro" ng-disabled="registro.nome.$invalid || registro.url.$invalid">
+                    Registrar
+                </button>
+            </form>
+            <div class="errorValidação" ng-if="error.resultado == false">
+                <span class="topo">Erros:</span><br>
+                <span ng-show="error.errorNome != ''">{{error.errorNome}}<br></span>
+                <span ng-show="error.errorUrl != ''">{{error.errorUrl}}</span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

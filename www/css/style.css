@@ -24,12 +24,10 @@
 .header-conteudo{
     height: 75px;
     position: relative;
-    border-bottom: 1px solid black;
 }
 
 .titulo-header-conteudo{
     font-size: 25px;
-    left: 25px;
     position: absolute;
     top: 50%;
     transform: translate(0%, -50%);
@@ -37,7 +35,7 @@
 
 .posicao-botao{
     position: absolute;
-    right: 25px;
+    right: 0px;
     top: 50%;
     transform: translate(0%, -50%);
     border: 1px solid #ccc !important;
@@ -60,7 +58,7 @@
 .feed-acao{
     position: absolute;
     top: 50%;
-    right: 0px;
+    right: 20px;
     transform: translate(0%, -50%);
     font-size: 20px;
 }
@@ -69,6 +67,10 @@
     border-bottom: 1px solid #ccc; 
     position: relative;
     height: 50px;
+}
+
+.icon-excluir{
+    margin-right: 20px;
 }
 
 /* POPUP */

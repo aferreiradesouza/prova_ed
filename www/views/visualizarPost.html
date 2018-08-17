@@ -1,0 +1,22 @@
+<ion-view style="background-color: #f8f8f8;" ng-init="init()">
+    <ion-content scroll="false">
+        <div class="bar bar-header bar-calm ajuste-altura">
+            <span class="titulo">Feed</span>
+        </div>
+        <div class="conteudo">
+            <!-- Cabeçalho do conteúdo -->
+            <div class="header-conteudo">
+                <span class="titulo-header-conteudo">{{postagem.titulo}}</span>
+                <a ng-href="/#/listaPosts">
+                    <button class="button button-stable posicao-botao">
+                        Voltar
+                    </button>
+                </a>
+            </div>
+
+            <!-- Conteudo -->
+            <div>{{postagem.urlPost}}</div>
+            <div>{{postagem.text}}</div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+.limitador{
+    text-align: right !important;
+    position: relative !important;
+    margin: 20px auto !important;
+}
+
+.posicao-botao-registro{
+    position: relative;
+    text-align: right;
+    font-size: 20px;
+}
+
+.opacity{
+    opacity: 0.5;
+}
+
+.errorValidação{
+    background-color:#f8f8f8;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    font-size: 17px;
+    padding: 20px;
+    color:red;
+}
+
+.topo{
+    color:red;
+    font-weight: bold;
+    font-size: 20px;
+}

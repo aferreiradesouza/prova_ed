@@ -1,0 +1,42 @@
+<ion-view style="background-color: #f8f8f8;" ng-init="init()">
+    <ion-content scroll="false">
+        <div class="bar bar-header bar-calm ajuste-altura">
+            <span class="titulo">Feed</span>
+        </div>
+        <div class="conteudo">
+            <!-- Cabeçalho do conteúdo -->
+            <div class="header-conteudo">
+                <span class="titulo-header-conteudo">Criar Post</span>
+                <a ng-href="/#/listaPosts">
+                    <button class="button button-stable posicao-botao">
+                        Voltar
+                    </button>
+                </a>
+            </div>
+            <!-- formulário -->
+            <form ng-submit="criar()" name="registroPost">
+                <div class="list list-inset limitador">
+                    <label class="item item-input">
+                        <input type="text" ng-model="data.titulo" style="font-size: 20px;" placeholder="Nome">
+                    </label>
+                    <label class="item item-input" style="font-size: 25px;">
+                        <input type="text" ng-model="data.urlPost" style="font-size: 20px;" placeholder="URL">
+                    </label>
+                    <label class="item item-input" style="font-size: 25px;">
+                        <textarea class="textAreaRegistro" type="text" ng-model="data.text" style="font-size: 20px;" placeholder="Texto"></textarea>
+                    </label>
+                    <span class="ler">Marcar como lido?</span>
+                    <label class="toggle ajustesToggle">
+                        <input type="checkbox" ng-model="data.lido">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+                <button class="button button-calm">
+                    Registrar
+                </button>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

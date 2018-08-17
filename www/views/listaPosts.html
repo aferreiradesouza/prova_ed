@@ -6,18 +6,22 @@
         <div class="conteudo">
             <!-- Cabeçalho do conteúdo -->
             <div class="header-conteudo">
-                <span class="titulo-header-conteudo">Feeds</span>
-                <a ng-href="/#/registrarFeed">
+                <a ng-href="/#/listaFeed">
+                    <button class="button button-stable posicao-botao-voltar">
+                        Voltar
+                    </button>
+                </a>
+                <span class="titulo-header-conteudo" style="margin-left: 10px;">Posts</span>
+                <a ng-href="/#/registrarPost">
                     <button class="button button-stable posicao-botao">
-                        Adicionar feed
+                        Adicionar Post
                     </button>
                 </a>
             </div>
             <!-- listagem -->
             <ul class="list" style="margin-top: 15px;">
-                <li class="item" ng-repeat="item in feed track by $index" style="font-size: 20px;" ng-click="obterListaPosts(item.guid)">
-                    <span><i class="icon ion-close icon-excluir" ng-click="excluir($index)"></i></span>
-                    {{item.nome}}
+                <li class="item" ng-class="{'lido' : item.lido == false}" ng-repeat="item in listaPosts" style="font-size: 20px;" ng-click="verPost(item)">
+                    {{item.titulo}}
                     <span class="feed-acao">
                         <i class="icon ion-chevron-right"></i>
                     </span>
