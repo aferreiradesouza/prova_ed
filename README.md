@@ -4,35 +4,30 @@ Fazer um sistema de blog, em que crie posts dentro de feeds.
 
 ## Requerido para funcionar
 
-### Instalar nodejs
+### Instalar o npm
 
 ```
-Give examples
-```
-
-### Instalar npm
-
-```
-Give examples
+npm install
 ```
 
 ### Instalar o Ionic
 
 ```
-Give examples
+npm install -g ionic
 ```
 
 ### Iniciar o servidor
 
 ```
-Give examples
+cd provaEd 
+ionic serve
 ```
 
 ## Funcionalidades
 
 * Criar feeds
 * Criar posts dentro desses feeds
-* Marcar os desmarcar como lido o post
+* Marcar ou desmarcar como lido o post
 
 ## Linguagens
 
