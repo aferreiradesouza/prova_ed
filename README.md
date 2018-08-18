@@ -31,7 +31,7 @@ npm install
 ### Iniciar o servidor
 
 ```
-cd provaEd
+cd prova_ed
 ionic serve
 ```
 
