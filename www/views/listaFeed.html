@@ -14,12 +14,14 @@
                 </a>
             </div>
             <!-- listagem -->
-            <div ng-if="feed == '' || feed == null" class="msgAtencao">
+            <div ng-if="feeds == '' || feeds == null" class="msgAtencao">
                 Nenhum feed adicionado
             </div>
             <ul class="list" style="margin-top: 15px;">
-                <li class="item" ng-repeat="item in feed track by $index" style="font-size: 20px;" ng-click="obterListaPosts(item.guid, item.name)">
-                    <span><i class="icon ion-close icon-excluir" ng-click="excluir($index)"></i></span>
+                <li class="item" ng-repeat="item in feeds track by $index" style="font-size: 20px;" ng-click="obterListaPosts(item.guid, item.name)">
+                    <span ng-click="excluir($index)" style="z-index: 999">
+                        <i class="icon ion-close icon-excluir"></i>
+                    </span>
                     {{item.name}}
                     <span class="feed-acao">
                         <i class="icon ion-chevron-right"></i>

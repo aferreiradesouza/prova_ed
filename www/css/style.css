@@ -80,3 +80,17 @@
     opacity: 0.5;
     text-align: center;
 }
+
+/* POPUP */
+
+.popup{
+    width: 400px !important;
+}
+
+.popup-title{
+    font-size: 25px !important;
+}
+
+.popup-sub-title{
+    font-size: 17px !important;
+}

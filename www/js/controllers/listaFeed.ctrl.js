@@ -10,7 +10,7 @@ app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed,
         var postsAux = Util.obterObjeto('Posts');
 
         if (feedsAux != '') {
-            $rootScope.feed = Util.converterParaObjeto(feedsAux);
+            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
         }
         if (postsAux != '') {
             $rootScope.posts = Util.converterParaObjeto(postsAux);
@@ -23,7 +23,7 @@ app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed,
         Util.salvarObjeto('Feeds', $rootScope.feeds)
     }
 
-    //salva o guid e o name do feed selecionado, laem de chamar o servico de obterlistaPost
+    //salva o guid e o name do feed selecionado no $rootScope, alem de chamar o serviço de obterlistaPost
     $scope.obterListaPosts = function(guid, name){
         $rootScope.feedAtual = name;
         $rootScope.guidAtual = guid;
