@@ -35,6 +35,12 @@ npm install
 ionic serve
 ```
 
+### link do site
+
+```
+https://provaed.000webhostapp.com
+```
+
 ## Funcionalidades
 
 * Criar feeds
