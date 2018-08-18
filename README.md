@@ -1,6 +1,6 @@
 # Objetivo
 
-Fazer um sistema de blog, em que crie posts dentro de feeds.
+Fazer um sistema de blog, e crie posts dentro de feeds.
 
 ## Requerido para funcionar
 
