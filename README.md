@@ -16,19 +16,23 @@ https://nodejs.org/dist/v10.9.0/node-v10.9.0-x64.msi
 npm install -g ionic
 ```
 
-### Iniciar o servidor
+### Baixar repositório
 
 ```
 git clone https://github.com/aferreiradesouza/prova_ed
-cd provaEd 
-ionic serve
 ```
 
-### Instalar o npm
+### Instalar dependências npm
+
+```
+npm install
+```
+
+### Iniciar o servidor
 
 ```
 cd provaEd
-npm install
+ionic serve
 ```
 
 ## Funcionalidades
