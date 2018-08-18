@@ -35,7 +35,7 @@ ionic serve
 * CSS3
 * HTML5
 
-## Frameworks utilizados
+## Frameworks
 
 * AngularJS
 * Ionic V1
