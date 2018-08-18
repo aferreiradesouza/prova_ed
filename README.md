@@ -20,6 +20,7 @@ npm install -g ionic
 
 ```
 git clone https://github.com/aferreiradesouza/prova_ed
+cd prova_ed
 ```
 
 ### Instalar dependências npm
@@ -31,7 +32,6 @@ npm install
 ### Iniciar o servidor
 
 ```
-cd prova_ed
 ionic serve
 ```
 
