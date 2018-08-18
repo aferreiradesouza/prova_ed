@@ -10,13 +10,6 @@ Fazer um sistema de blog, criando posts dentro de feeds, para realizar a prova p
 https://nodejs.org/dist/v10.9.0/node-v10.9.0-x64.msi
 ```
 
-### Instalar o npm
-
-```
-cd provaEd
-npm install
-```
-
 ### Instalar o Ionic
 
 ```
@@ -31,12 +24,19 @@ cd provaEd
 ionic serve
 ```
 
+### Instalar o npm
+
+```
+cd provaEd
+npm install
+```
+
 ## Funcionalidades
 
 * Criar feeds
+* Remover feed
 * Criar posts dentro desses feeds
 * Marcar ou desmarcar como lido o post
-* Remover feed
 
 ## Linguagens
 
