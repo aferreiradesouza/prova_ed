@@ -15,36 +15,41 @@ var app = angular.module('starter', ['ionic'])
   .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $ionicConfigProvider.views.maxCache(0);
     $stateProvider.state('listaFeed', {
-      url: '/listaFeed',
+      url: '/feeds',
       templateUrl: 'views/listaFeed.html',
-      controller: 'listaFeedCtrl'
+      controller: 'listaFeedCtrl',
+      cache: false
     })
 
-    .state('registrarFeed', {
-      url: '/registrarFeed',
-      templateUrl: 'views/registrarFeed.html',
-      controller: 'registrarFeedCtrl'
-    })
+      .state('registrarFeed', {
+        url: '/registrarFeed',
+        templateUrl: 'views/registrarFeed.html',
+        controller: 'registrarFeedCtrl',
+        cache: false
+      })
 
-    .state('listaPosts', {
-      url: '/listaPosts',
-      templateUrl: 'views/listaPosts.html',
-      controller: 'listaPostsCtrl'
-    })
+      .state('listaPosts', {
+        url: '/feeds/:guid/posts',
+        templateUrl: 'views/listaPosts.html',
+        controller: 'listaPostsCtrl',
+        cache: false
+      })
 
-    .state('registrarPost', {
-      url: '/registrarPost',
-      templateUrl: 'views/registrarPost.html',
-      controller: 'registrarPostCtrl'
-    })
+      .state('registrarPost', {
+        url: '/registrarPost',
+        templateUrl: 'views/registrarPost.html',
+        controller: 'registrarPostCtrl',
+        cache: false
+      })
 
-    .state('visualizarPost', {
-      url: '/visualizarPost',
-      templateUrl: 'views/visualizarPost.html',
-      controller: 'visualizarPostCtrl'
-    });
+      .state('visualizarPost', {
+        url: '/feeds/:guid/posts/:guidPost',
+        templateUrl: 'views/visualizarPost.html',
+        controller: 'visualizarPostCtrl',
+        cache: false
+      });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('listaFeed');
+    $urlRouterProvider.otherwise('feeds');
 
   });

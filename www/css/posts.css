@@ -10,36 +10,61 @@
 .urlPost{
     font-size: 15px;
     opacity: 0.6;
-    margin-top: -23px;
 }
 
 .textPost{
-    margin-top: 35px;
     font-size: 20px;
+    min-height: 120px;
+    padding-top: 20px;
 }
 
+.textPost>img{
+    margin-right: 15px;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+
 .marcarLido{
-    position: absolute;
-    width: 231px;
     height: 35px;
-    right: 30px;
+    text-align: right;
+    margin-top: 15px;
 }
 
 .ajustesToggle {
-    position: absolute;
-    right: 0;
+    text-align: right;
+    vertical-align: middle;
 }
 
 .lido {
-    position: absolute;
-    right: 60px;
-    bottom: 10px;
+    text-align: right;
     font-size: 20px;
 }
 
 .item>img{
     width: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0%, -50%);
+    vertical-align: middle;
+}
+
+.titulo-header-conteudo-post{
+    font-size: 25px;
+    padding-top: 20px;
+    width: calc(100% - 130px);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.botao-post{
+    width: 100px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+.posicao-botao-voltar-post{
+    border: 1px solid #ccc !important;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
 }

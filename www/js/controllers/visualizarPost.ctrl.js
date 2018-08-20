@@ -1,17 +1,22 @@
-app.controller('visualizarPostCtrl', function ($scope, Util, $rootScope, servicoFeed, $location) {
-    $rootScope.posts = [];
+app.controller('visualizarPostCtrl', function ($scope, Util, $rootScope, servicoFeed, $state, $stateParams) {
+    $scope.post = {};
 
-    //Obtem listas
     $scope.init = function () {
-        var postsAux = Util.obterObjeto('Posts');
-
-        if (postsAux != '') {
-            $rootScope.posts = Util.converterParaObjeto(postsAux);
-        }
+        var listaPosts = servicoFeed.obterListaPost($stateParams.guid);
+        listaPosts.forEach(item => {
+            if($stateParams.guidPost == item.guid){
+                $scope.post = item;
+            }
+        });
     }
 
     //chama o servico que altera para true ou false o boolean read
     $scope.alterarLido = function(obj){
         servicoFeed.marcarLido(obj);
     }
+
+    $scope.voltar = function(){
+        $state.go("listaPosts",{guid:$stateParams.guid});
+    }
+
 })

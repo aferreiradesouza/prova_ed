@@ -1,35 +1,27 @@
-app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed, $location) {
+app.controller('listaFeedCtrl', function ($scope, Util, $rootScope, servicoFeed, $state, $ionicHistory) {
     $scope.data = {}
-    $rootScope.feeds = [];
-    $rootScope.posts = [];
+    $scope.feeds = [];
 
+    $scope.$on('$ionicView.enter', function () {
+        $ionicHistory.clearCache().then(function(){
+            $state.reload();
+        })
+    });
 
-    //Obtem listas
     $scope.init = function () {
-        var feedsAux = Util.obterObjeto('Feeds');
-        var postsAux = Util.obterObjeto('Posts');
-
-        if (feedsAux != '') {
-            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
-        }
-        if (postsAux != '') {
-            $rootScope.posts = Util.converterParaObjeto(postsAux);
-        }
+        $scope.feeds = servicoFeed.obterListaFeed();
     }
 
-    //exclui o feed
-    $scope.excluir = function(index){
-        $rootScope.feeds.splice(index, 1);
-        Util.salvarObjeto('Feeds', $rootScope.feeds)
+    $scope.excluir = function (guid) {
+        servicoFeed.excluirFeed(guid);
+        $scope.feeds = servicoFeed.obterListaFeed();
     }
 
-    //salva o guid e o name do feed selecionado no $rootScope, alem de chamar o serviço de obterlistaPost
-    $scope.obterListaPosts = function(guid, name){
-        $rootScope.feedAtual = name;
-        $rootScope.guidAtual = guid;
-        $rootScope.listaPosts = servicoFeed.obterListaPost(guid);
-
-        $location.path("/listaPosts");
+    $scope.obterListaPosts = function (guid) {
+        $state.go("listaPosts", { guid: guid });
     }
 
+    $scope.addFeed = function () {
+        $state.go("registrarFeed");
+    }
 })

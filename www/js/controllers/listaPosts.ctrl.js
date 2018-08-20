@@ -1,26 +1,22 @@
-app.controller('listaPostsCtrl', function ($scope, Util, $rootScope, servicoFeed, $location) {
-    $rootScope.feeds = [];
-    $rootScope.posts = [];
-
-    //Obtem listas
-    $scope.init = function () {
-        var feedsAux = Util.obterObjeto('Feeds');
-        var postsAux = Util.obterObjeto('Posts');
-
-        if (feedsAux != '') {
-            $rootScope.feeds = Util.converterParaObjeto(feedsAux);
-        }
-        if (postsAux != '') {
-            $rootScope.posts = Util.converterParaObjeto(postsAux);
-        }
-
-        $rootScope.listaPosts = servicoFeed.obterListaPost($rootScope.guidAtual);
-    }
-
-    //guarda o objeto do post selecionado no $rootScope.postagem
-    $scope.verPost = function(obj){
-        $rootScope.postagem = obj;
-        $location.path('/visualizarPost');
-    }
+app.controller('listaPostsCtrl', function ($scope, Util, $rootScope, servicoFeed, $state, $stateParams) {
     
+    $scope.init = function () {
+        $scope.posts = servicoFeed.obterListaPost($stateParams.guid);
+        var listaFeeds = servicoFeed.obterListaFeed();
+
+        listaFeeds.forEach(item => {
+            if($stateParams.guid == item.guid){
+                $scope.feedAtual = item.name;
+            }
+        });
+    }
+
+    $scope.verPost = function (guid) {
+        $state.go("visualizarPost", { guid: $stateParams.guid, guidPost: guid });
+    }
+
+    $scope.voltar = function () {
+        $state.go("listaFeed");
+    }
+
 })

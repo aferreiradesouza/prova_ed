@@ -1,4 +1,4 @@
-<ion-view style="background-color: #f8f8f8;" ng-init="init()">
+<ion-view cache-view="false" style="background-color: #f8f8f8;" ng-init="init()">
     <ion-content scroll="false">
         <div class="bar bar-header bar-calm ajuste-altura">
             <span class="titulo">Feed</span>
@@ -6,24 +6,26 @@
         <div class="conteudo">
             <!-- Cabeçalho do conteúdo -->
             <div class="header-conteudo">
-                <span class="titulo-header-conteudo">Feeds</span>
-                <a ng-href="/#/registrarFeed">
-                    <button class="button button-stable posicao-botao">
-                        Adicionar feed
-                    </button>
-                </a>
+                <div class="titulo-header-conteudo-feed">Feeds</div>
+                <div class="botao-add">
+                    <a ng-click="addFeed()">
+                        <button class="button button-stable posicao-botao-add">
+                            Adicionar feed
+                        </button>
+                    </a>
+                </div>
             </div>
             <!-- listagem -->
             <div ng-if="feeds == '' || feeds == null" class="msgAtencao">
                 Nenhum feed adicionado
             </div>
             <ul class="list" style="margin-top: 15px;">
-                <li class="item" ng-repeat="item in feeds track by $index" style="font-size: 20px;" ng-click="obterListaPosts(item.guid, item.name)">
-                    <span ng-click="excluir($index)" style="z-index: 999">
+                <li class="item" ng-repeat="item in feeds track by $index" style="font-size: 20px;">
+                    <span ng-click="excluir(item.guid)" style="z-index: 999; cursor: pointer">
                         <i class="icon ion-close icon-excluir"></i>
                     </span>
                     {{item.name}}
-                    <span class="feed-acao">
+                    <span class="feed-acao" ng-click="obterListaPosts(item.guid)" style="cursor: pointer">
                         <i class="icon ion-chevron-right"></i>
                     </span>
                 </li>

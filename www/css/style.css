@@ -14,12 +14,13 @@
 }
 
 .conteudo{
-    width: 50vw;
+    width: 80vw;
     position: relative;
     margin: 0 auto;
     background: white;
     padding: 0 30px 20px;
 }
+
 
 .header-conteudo{
     height: 75px;
@@ -35,9 +36,8 @@
 
 .posicao-botao{
     position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translate(0%, -50%);
+    right: 30px;
+    top: 15px;
     border: 1px solid #ccc !important;
 }
 
@@ -79,6 +79,25 @@
     font-size: 20px;
     opacity: 0.5;
     text-align: center;
+}
+
+.posicao-botao-add{
+    border: 1px solid #ccc !important;
+    margin-top: 20px;
+}
+
+.botao-add{
+    width: 129px;
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.titulo-header-conteudo-feed{
+    width: calc(100% - 135px);
+    display: inline-block;
+    font-size: 25px;
+    vertical-align: middle;
 }
 
 /* POPUP */

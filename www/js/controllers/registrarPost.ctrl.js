@@ -1,4 +1,4 @@
-app.controller('registrarPostCtrl', function ($scope, Util, $rootScope, servicoFeed, $location) {
+app.controller('registrarPostCtrl', function ($scope, Util, $rootScope, servicoFeed, $state) {
     $scope.data = {}
     $rootScope.posts = [];
 
@@ -16,6 +16,6 @@ app.controller('registrarPostCtrl', function ($scope, Util, $rootScope, servicoF
         $scope.data.read = false;
         $scope.data.guid = $rootScope.guidAtual;
         servicoFeed.criarPost($scope.data);
-        $location.path("/listaPosts");
+        $state.go("listaFeed");
     }
 })

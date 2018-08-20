@@ -6,25 +6,25 @@
         <div class="conteudo">
             <!-- Cabeçalho do conteúdo -->
             <div class="header-conteudo">
-                <a ng-href="/#/listaFeed">
+                <a ng-click="voltar()">
                     <button class="button button-stable posicao-botao-voltar">
                         Voltar
                     </button>
                 </a>
                 <span class="titulo-header-conteudo" style="margin-left: 10px;">{{feedAtual}}</span>
-                <a ng-href="/#/registrarPost">
+                <!-- <a ng-href="/#/registrarPost">
                     <button class="button button-stable posicao-botao">
                         Adicionar Post
                     </button>
-                </a>
+                </a> -->
             </div>
             <!-- listagem -->
-            <div ng-if="listaPosts == '' || listaPosts == null" class="msgAtencao">
+            <div ng-if="posts == '' || posts == null" class="msgAtencao">
                 Nenhum post criado
             </div>
             <ul class="list" style="margin-top: 15px;">
-                <li class="item" ng-class="{'lido' : item.lido == false}" ng-repeat="item in listaPosts" style="font-size: 20px;" ng-click="verPost(item)">
-                    {{item.title}}&nbsp;<img src="../img/check.png" ng-if="item.read">
+                <li class="item" ng-class="{'lido' : item.lido == false}" ng-repeat="item in posts" style="font-size: 20px;" ng-click="verPost(item.guid)">
+                        <img src="../img/check.png" ng-if="item.read"><span style="vertical-align: middle;">{{item.title}}</span>
                     <span class="feed-acao">
                         <i class="icon ion-chevron-right"></i>
                     </span>
